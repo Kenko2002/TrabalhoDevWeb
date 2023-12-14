@@ -44,8 +44,6 @@ public class Epico {
 	@JoinTable(name = "dependencia_epico", joinColumns = @JoinColumn(name = "epico_pai_id"), inverseJoinColumns = @JoinColumn(name = "epico_filho_id"))
 	private List<Epico> dependentes;
 
-	@JsonManagedReference
-	@OneToMany(mappedBy = "epico", cascade = CascadeType.ALL)
-	private List<HistoriaDeUsuario> historiadeusuarios;
+
 }
 
