@@ -47,7 +47,6 @@ public class HistoriaDeUsuario {
 
 
 	//historia de usuario.java
-	@JsonBackReference
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "epico_id")
 	private Epico epico;
