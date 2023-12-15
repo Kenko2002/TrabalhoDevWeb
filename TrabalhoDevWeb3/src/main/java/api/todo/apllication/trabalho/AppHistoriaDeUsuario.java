@@ -1,7 +1,12 @@
 package api.todo.apllication.trabalho;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import api.todo.arvore.ArvoreAVL;
+import api.todo.arvore.ComparatorEpicoID;
+import api.todo.arvore.ComparatorHistoriaID;
+import api.todo.arvore.IArvoreBinaria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -40,7 +45,12 @@ public class AppHistoriaDeUsuario {
 	}
 	
 	public ArrayList<HistoriaDeUsuario> getAll(){
-		return (ArrayList<HistoriaDeUsuario>) repository.findAll();
+		List<HistoriaDeUsuario> historias = repository.findAll();
+		IArvoreBinaria<HistoriaDeUsuario> arvoreHistoria = new ArvoreAVL<>(new ComparatorHistoriaID());
+		for (HistoriaDeUsuario historia : historias){
+			arvoreHistoria.adicionar(historia);
+		}
+		return (ArrayList<HistoriaDeUsuario>) arvoreHistoria.caminharEmOrdemLista();
 	}
 	
 	public HistoriaDeUsuario create(HistoriaDeUsuario historia) {
