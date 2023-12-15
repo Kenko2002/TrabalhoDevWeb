@@ -1,0 +1,7 @@
+api/todo/model/trabalho/Tarefa.class
+api/todo/apllication/trabalho/AppHistoriaDeUsuario.class
+api/todo/model/trabalho/Epico.class
+api/todo/apllication/trabalho/AppTarefa.class
+api/todo/controller/trabalho/TrabalhoController.class
+api/todo/apllication/trabalho/AppEpico.class
+api/todo/model/trabalho/HistoriaDeUsuario.class
