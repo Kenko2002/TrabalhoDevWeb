@@ -3,6 +3,9 @@ package api.todo.apllication.trabalho;
 import java.util.ArrayList;
 import java.util.List;
 
+import api.todo.arvore.ArvoreAVL;
+import api.todo.arvore.ComparatorEpicoID;
+import api.todo.arvore.IArvoreBinaria;
 import api.todo.grafo.Vertice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -49,7 +52,12 @@ public class AppEpico {
 	}
 
 	public ArrayList<Epico> getAll(){
-		return (ArrayList<Epico>) repository.findAll();
+		List<Epico> epicos = repository.findAll();
+		IArvoreBinaria<Epico> arvoreEpico = new ArvoreAVL<>(new ComparatorEpicoID());
+		for (Epico epico : epicos){
+			arvoreEpico.adicionar(epico);
+		}
+		return (ArrayList<Epico>) arvoreEpico.caminharEmOrdemLista();
 	}
 	public Epico create(Epico epico) {
 		GerarHistorias(epico);
