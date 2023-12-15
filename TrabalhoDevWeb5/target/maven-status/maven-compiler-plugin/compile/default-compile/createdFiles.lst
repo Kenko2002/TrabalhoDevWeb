@@ -1,0 +1,13 @@
+api/todo/model/trabalho/Tarefa.class
+api/todo/apllication/trabalho/AppHistoriaDeUsuario.class
+api/todo/model/trabalho/Epico.class
+api/todo/apllication/trabalho/AppTarefa.class
+api/todo/arvore/ArvoreBinaria.class
+api/todo/controller/trabalho/TrabalhoController.class
+api/todo/arvore/ComparatorHistoriaID.class
+api/todo/arvore/NoArvore.class
+api/todo/apllication/trabalho/AppEpico.class
+api/todo/arvore/ArvoreAVL.class
+api/todo/arvore/ComparatorEpicoID.class
+api/todo/arvore/IArvoreBinaria.class
+api/todo/model/trabalho/HistoriaDeUsuario.class
